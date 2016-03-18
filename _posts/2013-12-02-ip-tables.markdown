@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "IP Tables"
+date:   2013-12-02 19:30:00
+summary: "Use IP tables to route traffic from privileged to non-privileged ports in Linux."
+tags:
+- aws
+
+---
+
+IP tables are great because you can ask the OS to redirect privileged ports. This means that you can run application servers (e.g. play, spray or jetty etc.) under a [less privileged](http://en.wikipedia.org/wiki/Principle_of_least_privilege) account and bind to port 8080 or 9000 etc.
+
+{% highlight bash %}
+# Redirect port 80 to 8080.
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+# List redirects.
+sudo iptables -t nat --line-numbers -n -L
+
+# Delete redirect 1 (in the list above).
+sudo iptables -t nat -D PREROUTING 1
+{% endhighlight %}
