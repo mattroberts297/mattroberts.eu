@@ -5,7 +5,8 @@ date:   2013-12-02 19:30:00
 summary: "Use IP tables to route traffic from privileged to non-privileged ports in Linux."
 tags:
 - aws
-
+- linux
+- bash
 ---
 
 IP tables are great because you can ask the OS to redirect privileged ports. This means that you can run application servers (e.g. play, spray or jetty etc.) under a [less privileged](http://en.wikipedia.org/wiki/Principle_of_least_privilege) account and bind to port 8080 or 9000 etc.

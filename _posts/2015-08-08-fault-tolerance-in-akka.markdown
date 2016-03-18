@@ -5,6 +5,8 @@ date:   2015-08-08 12:00:00
 summary: "Supervisor strategies, deciders, guardians and the command failed pattern in Akka."
 tags:
 - scala
+- akka
+- distributed systems
 ---
 
 The official documentation on [Fault Tolerance](http://doc.akka.io/docs/akka/2.3.12/scala/fault-tolerance.html) gives a partial introduction to supervisor strategies and a worked example of supervision. If you want the complete lowdown on supervision then you need to check out the official documentation on [Supervision and Monitoring](http://doc.akka.io/docs/akka/2.3.12/general/supervision.html) and [the source code](https://github.com/akka/akka/tree/v2.3.12).

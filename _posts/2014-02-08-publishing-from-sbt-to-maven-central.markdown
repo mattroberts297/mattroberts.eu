@@ -6,6 +6,8 @@ summary: "Publish an artifact using the sbt-pgp plugin and the Sonatype Nexus Re
 tags:
 - scala
 - sbt
+- maven
+- open source
 ---
 
 This is how I published [SLF4S][slf4s] to Maven Central.

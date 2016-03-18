@@ -5,6 +5,7 @@ date:   2015-04-16 20:00:00
 summary: "Use implicit classes to make API interoperability more pleasurable in client code."
 tags:
 - scala
+- pattern
 ---
  The adapter pattern is a structural design pattern. Its aim is to convert the interface of a class into another interface that client code expects (GoF, 1994). The example given in Design Patterns looks similar to this:
 

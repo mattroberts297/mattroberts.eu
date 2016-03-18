@@ -5,6 +5,7 @@ date:   2015-08-01 20:30:00
 summary: "Use the factory, factory method, builder, prototype and singleton patterns in Scala."
 tags:
 - scala
+- pattern
 ---
 
 Creational patterns abstract away some detail of the instantiation process. The GoF identify the following creational patterns:

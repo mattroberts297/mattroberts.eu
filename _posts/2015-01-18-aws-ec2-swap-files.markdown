@@ -5,6 +5,7 @@ date:   2015-01-18 11:30:00
 summary: "Create swap files on t2.micro instances to stop the linux OS killing your JVM process."
 tags:
 - aws
+- linux
 ---
 
 At the time of writing, the AWS EC2 t2.micro instance comes with: 1 vCPU; 6 CPU credits / hour; 1 GiB of RAM and some EBS storage. If you're using a t2.micro, performance probably isn't your thing. They're great for testing little applications out however. The only problem is that if you start to run out of memory then Linux will start killing processes (probably yours).
