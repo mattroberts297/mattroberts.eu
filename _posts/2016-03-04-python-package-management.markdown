@@ -11,13 +11,13 @@ tags:
 Python ships with [easy_install][easy-install] but that is limited so people use [pip][pip]:
 
 ```bash
-sudo easy_install pip.
+sudo easy_install pip
 ```
 
 Whilst pip is better than easy_install it still installs dependencies globally by default (unlike npm, sbt, mvn etc.). So, everyone uses [virtualenv][virtualenv]:
 
 ```bash
-sudo pip install virtualenv.
+sudo pip install virtualenv
 ```
 
 Using virtualenv is a little involved:
