@@ -2,15 +2,16 @@
 layout: post
 title:  "Git Reference"
 date:   2014-06-30 21:30:00
-summary: "Configure git and start collaborating."
+summary: "Git reference"
 tags:
 - git
 ---
 
 Git is without a doubt my favourite VCS to date. I put this reference together when I first started using it. I still find myself referring back to it when I set up a computer for the first time. Most of the contents is taken from stack overflow articles and the git book. But it's obviously been condensed somewhat.
 
-#### Config
-{% highlight bash %}
+### Config
+
+```bash
 # For completeness!
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
@@ -34,10 +35,12 @@ git config --global mergetool.diffmerge.trustExitCode true
 git config --global mergetool.keepBackup false
 # This is *not* the default in 1.x
 git config --global push.default current
-{% endhighlight %}
+```
 
-#### Getting Started
-{% highlight bash %}
+### Getting Started
+
+```bash
+
 # Initialize a git repository.
 cd ~/
 mkdir foo
@@ -63,11 +66,13 @@ git diff --staged                  #  |- Diff staged README.
 git ci -m "Updated README."
 git log
 git push                           # Push changes to Foo.
-{% endhighlight %}
+```
 
-#### Collaborating
-##### Merging
-{% highlight bash %}
+### Collaborating
+
+#### Merging
+
+```bash
 # Clone again.
 cd ~/
 git clone foo foo-baz
@@ -88,10 +93,11 @@ git pull
 git mergetool
 git ci -m "Resolving merge."
 git push
-{% endhighlight %}
+```
 
-##### Branching
-{% highlight bash %}
+#### Branching
+
+```bash
 # Creating a branch.
 git branch dev                     # Create dev branch.
 git branch                         # Show all branches.
@@ -119,4 +125,11 @@ git checkout -b dev origin/dev
 # Delete a branch remotely.
 git branch -d dev
 git push origin :dev
-{% endhighlight %}
+```
+
+#### Rebasing
+
+```bash
+# Pull the remote branch and rebase yours on top of it
+git pull --rebase
+```
