@@ -60,3 +60,15 @@ GET  /  controllers.Application.index
 ```
 
 At version 2.3.x, the `PlayScala` plugin still includes quite a few dependencies that you might not actually want. Including, but not limited to, specs2 (I prefer ScalaTest).
+
+Oh and whilst completely optional, here is my `.gitignore` file:
+
+```
+logs
+project/project
+project/target
+target
+tmp
+dist
+.cache
+```
