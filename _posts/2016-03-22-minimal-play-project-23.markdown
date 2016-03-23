@@ -1,13 +1,14 @@
 ---
 layout: post
-title:  "Minimal Play 2.3.x Project"
+title:  "Minimal Play 2.3 Project"
 date:   2016-03-21 18:32:00 +0000
 tags:
-- python
-- versioning
+- play
+- play 2.3
+- bootstrap
 ---
 
-Get started with the Play Framework 2.3.x with just 4 files and no Typesafe Activator:
+Get started with the Play Framework 2.3 with just 4 files and no Typesafe Activator:
 
 ```bash
 .
