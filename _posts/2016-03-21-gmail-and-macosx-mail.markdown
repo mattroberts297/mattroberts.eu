@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Gmail and Mac OS X Mail"
-date:   2016-03-17 08:00:00 +0000
+date:   2016-03-21 08:00:00 +0000
 tags:
 - osx
 - lifehacks

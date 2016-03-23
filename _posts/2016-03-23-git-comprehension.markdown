@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Git comprehension"
-date:   2016-03-21 18:32:00 +0000
+title:  "Git Comprehension"
+date:   2016-03-23 08:35:00 +0000
 tags:
 - git
 - reference

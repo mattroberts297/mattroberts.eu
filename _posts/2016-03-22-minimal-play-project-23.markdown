@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Minimal Play 2.3 Project"
-date:   2016-03-21 18:32:00 +0000
+date:   2016-03-22 08:20:00 +0000
 tags:
 - play
 - play 2.3
