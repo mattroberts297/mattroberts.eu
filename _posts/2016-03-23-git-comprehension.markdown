@@ -17,8 +17,8 @@ git log --oneline
 git log --status
 # Do not show merges (particularly useful when rebasing is frowned upon)
 git log --no-merges
-# Show details of the last commit
-git show # Same as git show HEAD
+# Show details of the last commit (HEAD)
+git show
 # Show details of the penultimate commit
 git show HEAD~1
 # Show details of a particular commit e.g. c6a105e
