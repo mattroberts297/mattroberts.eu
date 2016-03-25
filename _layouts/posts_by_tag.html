@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="notes">
+  <h2>{{ page.tag | capitalize }} Posts</h2>
+
+  {% if site.tags[page.tag] %}
+    <ul class="post-list">
+      {% for post in site.tags[page.tag] %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no posts for this tag.</p>
+  {% endif %}
+</div>
