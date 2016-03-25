@@ -5,7 +5,6 @@ date:   2016-03-04 18:59:00 +0000
 tags:
 - python
 - versioning
-- dependencies
 ---
 
 Python ships with [easy_install][easy-install] but that is limited so people use [pip][pip]:
