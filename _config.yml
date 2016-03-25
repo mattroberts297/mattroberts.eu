@@ -9,7 +9,7 @@
 title: Matt Roberts
 email: mail@mattroberts.eu
 description: > # this means to ignore newlines until "baseurl:"
-  Notes on scala, python, bash, git, aws and more
+  Posts on scala, python, bash, git, aws and more
 permalink: /posts/:year/:month/:day/:title/
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mattroberts.eu" # the base hostname & protocol for your site
