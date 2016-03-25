@@ -7,6 +7,6 @@ tags:
 - jekyll
 ---
 
-I've decided to put most of my notes online. They'll be licensed under the [MIT License][mit] unless explicitly stated otherwise.
+I've decided to put most of my notes online. Any source code should be considered licensed under the [MIT License][mit] unless explicitly stated otherwise.
 
-[mit]: http://mit.license
+[mit]: https://opensource.org/licenses/MIT

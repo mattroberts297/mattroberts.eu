@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-TODO Put something about me here.
+I'm a software consultant at [Typed Solutions][ts].
+
+[ts]: https://typed.solutions
