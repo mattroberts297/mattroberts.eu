@@ -4,7 +4,6 @@ title:  "Git Comprehension"
 date:   2016-03-23 08:35:00 +0000
 tags:
 - git
-- reference
 ---
 
 Some commands to help navigate a large and / or fast moving repository:

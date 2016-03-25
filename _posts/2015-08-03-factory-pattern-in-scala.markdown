@@ -5,7 +5,7 @@ date:   2015-08-03 20:30:00
 summary: "Decouple your client code from constructors, unit test actors and materialize type classes."
 tags:
 - scala
-- pattern
+- patterns
 ---
 
 The factory pattern provides an interface to create objects without directly depending on concrete classes:

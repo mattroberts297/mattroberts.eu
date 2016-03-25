@@ -3,9 +3,8 @@ layout: post
 title:  "Minimal Play 2.3 Project"
 date:   2016-03-22 08:20:00 +0000
 tags:
+- scala
 - play
-- play 2.3
-- bootstrap
 ---
 
 Get started with the Play Framework 2.3 with just 4 files and no Typesafe Activator:

@@ -5,7 +5,7 @@ date:   2015-04-14 20:00:00
 summary: "Use the type system to create sensible inheritance hierarchies and push side effects to the edge of your application."
 tags:
 - scala
-- pattern
+- patterns
 ---
 
 The composite pattern is a structural design pattern. Its aim is to allow client code to treat individual objects and collections of objects uniformly (GoF, 1994). The example given in Design Patterns looks like so:
