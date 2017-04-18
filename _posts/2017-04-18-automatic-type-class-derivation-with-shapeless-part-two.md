@@ -9,9 +9,9 @@ tags:
 - shapeless
 ---
 
-This post is part of a series. You might want to read [Part One](/posts/2017/04/16/automatic-type-class-derivation-with-shapeless-part-one/) first if you haven't already. And when you're done here you might want to read Part Three.
+This post is part of a series. You might want to read [Part One][part-one] first if you haven't already. And when you're done here you might want to read Part Three.
 
-In Part One I explained that I wanted a library that would parse \*nix style options:
+In [Part One][part-one] I explained that I wanted a library that would parse \*nix style options:
 
 ```bash
 my-app --alpha foo --beta 1 --charlie
@@ -161,15 +161,15 @@ implicit def hlistParser[K <: Symbol, H, T <: HList](
 }
 ```
 
-The `apply` method here looks very similar to the `apply` method defined in Part One except we're asking the compiler to look for a `LabelledParser` for some `A` now. Things start to look a little different when we examine the implicit parameters for `genericParser`. In particular, `Generic.Aux[A, R]` has been replaced by `LabelledGeneric.Aux[A, R]`. Other than that, however, the method declaration and definition look reasonably similar. What is the difference between `Generic` and `LabelledGeneric`? From the documentation:
+The `apply` method here looks very similar to the `apply` method defined in [Part One][part-one] except we're asking the compiler to look for a `LabelledParser` for some `A` now. Things start to look a little different when we examine the implicit parameters for `genericParser`. In particular, `Generic.Aux[A, R]` has been replaced by `LabelledGeneric.Aux[A, R]`. Other than that, however, the method declaration and definition look reasonably similar. What is the difference between `Generic` and `LabelledGeneric`? From the documentation:
 
 > `LabelledGeneric` is similar to `Generic`, but includes information about field names or class names in addition to the raw structure.
 
-The `HList` `R` in the `genericParser` method here, therefore, is not the same as in Part One because it includes information about field names in addition to the raw structure. This is confirmed by the return type of `hlistParser` that states the `HList` is made up of `FieldType`s.
+The `HList` `R` in the `genericParser` method here, therefore, is not the same as in [Part One][part-one] because it includes information about field names in addition to the raw structure. This is confirmed by the return type of `hlistParser` that states the `HList` is made up of `FieldType`s.
 
-Let's examine the definition of `hlistParser` from top to bottom. First, the type parameters `H` and `T` are the same as in Part One (except the latter will be a `HList` of `FieldType`s). `K` is new and used to state that the field name of the `FieldType` must be a `Symbol`. Second, the Scala compiler now needs to find a head parser for `FieldType[K, H]` and a tail parser for `T`. This tells us that the definitions for primitive types e.g. `String`, `Int`, `Boolean` must also be different form their Part One counterparts (and if you read the full code you will see they are). Third, and finally, the tail parser now receives the same `args` as the head parser. This makes sense because the arguments could now be in any order.
+Let's examine the definition of `hlistParser` from top to bottom. First, the type parameters `H` and `T` are the same as in [Part One][part-one] (except the latter will be a `HList` of `FieldType`s). `K` is new and used to state that the field name of the `FieldType` must be a `Symbol`. Second, the Scala compiler now needs to find a head parser for `FieldType[K, H]` and a tail parser for `T`. This tells us that the definitions for primitive types e.g. `String`, `Int`, `Boolean` must also be different form their [Part One][part-one] counterparts (and if you read the full code you will see they are). Third, and finally, the tail parser now receives the same `args` as the head parser. This makes sense because the arguments could now be in any order.
 
-As mentioned above, definitions for primitive types have changed from Part One. Here is the `String` parser definition:
+As mentioned above, definitions for primitive types have changed from [Part One][part-one]. Here is the `String` parser definition:
 
 ```scala
 implicit def stringParser[K <: Symbol](
@@ -193,3 +193,5 @@ In comparison, the `field` method is relatively straight forward and lets us ret
 The code for part two is [available on Github]( https://github.com/mattroberts297/automatic-type-class-derivation-part-two).
 
 Part three will look at `Default`.
+
+[part-one]: https://mattroberts.io/posts/2017/04/16/automatic-type-class-derivation-with-shapeless-part-one/
