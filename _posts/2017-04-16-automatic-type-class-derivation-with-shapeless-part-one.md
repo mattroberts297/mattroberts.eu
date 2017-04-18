@@ -47,8 +47,8 @@ trait Parser[A] {
 
 object Parser {
   import shapeless.Generic
-  import shapeless.Lazy
   import shapeless.{HList, HNil, ::}
+  import shapeless.Lazy
 
   private def create[A](thunk: List[String] => A): Parser[A] = {
     new Parser[A] {
@@ -111,7 +111,7 @@ class ParserSpec extends FlatSpec with MustMatchers {
 }
 ```
 
-Now in my opinion, the real "magic" is here (I explain the trick below):
+Now, in my opinion, the real "magic" is here (I explain the trick below):
 
 ```scala
 def apply[A](
