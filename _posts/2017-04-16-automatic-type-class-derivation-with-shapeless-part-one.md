@@ -173,7 +173,7 @@ class ParserSpec extends FlatSpec with MustMatchers {
 
 You might be wondering why I haven't mentioned `Lazy` or why I use it. First, the easy answer: I haven't mentioned it because I think it hinders understanding and readability. As for why I use it, in short: it stops the compiler giving up it's search for implicits too early. In more detail: the Scala compiler uses heuristics to make sure that it doesn't get stuck in an infinite recursion when resolving implicits. For more complex data types, these heuristics tend to be too aggressive. The use of `Lazy` lets us workaround this issue.
 
-The code for part one is available on Github at https://github.com/mattroberts297/automatic-type-class-derivation-part-one.
+The code for part one is [available on Github]( https://github.com/mattroberts297/automatic-type-class-derivation-part-one).
 
 Part two will look at `LabelledGeneric`.
 
