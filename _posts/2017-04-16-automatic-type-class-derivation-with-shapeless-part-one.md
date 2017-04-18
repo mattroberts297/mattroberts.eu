@@ -9,32 +9,25 @@ tags:
 - shapeless
 ---
 
-I recently found myself needing to parse command line arguments in Scala. I discovered [scopt](https://github.com/scopt/scopt) and [scallop](https://github.com/scallop/scallop), but felt they required quite a lot of boiler plate. What I wanted was a library that would take a case class and automatically derive a parser for me at compile time. Ideally that library would support *nix style options e.g. `my-app --foo bar` falling-back to any defaults defined by the case class and erroring when that failed. I made [claper](https://github.com/mattroberts297/claper) to do just this and decided to write about how I did it here.
+I recently found myself needing to parse command line arguments in Scala. I discovered [scopt](https://github.com/scopt/scopt) and [scallop](https://github.com/scallop/scallop), but felt they required quite a lot of boiler plate. What I wanted was a library that would take a case class and automatically derive a parser for me at compile time. Ideally that library would parse \*nix style options e.g. `my-app --foo bar`, fall-back to defaults defined by the case class for missing options and return (not throw) an error when that failed. I made [claper](https://github.com/mattroberts297/claper) to do just this and decided to write about how I did it here.
 
-I started by trying to solve for a simpler problem because I thought converting this:
-
-```bash
-my-app --charlie --beta 1 --alpha foo
-```
-
-Into this:
-
-```
-case class SimpleArguments(alpha: String beta: Int, charlie: Boolean)
-SimpleArguments(alpha = "foo", beta = 1, charlie = true)
-```
-
-Was a little ambitious to start out with. So Instead I tried to convert this:
+I started by trying to solve for a simpler problem because I thought solving all of the above with my first try was a little ambitious to start out with. So Instead I tried to convert this:
 
 ```bash
 my-app foo 1 true
 ```
 
-Which is much easier because the parameters are in order and I don't need to know the field names of the case class. I also ignored the issue of defaults.
+Into this:
 
-I decided to use [shapeless](https://github.com/milessabin/shapeless) because I find the Scala macros api clumsy and it is still considered experimental which means as a library maintainer your code can get broken easily by new versions. I speak from the first-hand experience of maintaining [slf4s](https://github.com/mattroberts297/slf4s) - where I maintain a branch per Scala release.
+```scala
+SimpleArguments(alpha = "foo", beta = 1, charlie = true)
+```
 
-Here's what my `build.sbt` file looks like:
+Which is much easier because the parameters are in order and I don't need to know the field names of the case class. I also ignored the issue of defaults. **Don't panic!** I did solve for my actual use case and I'll cover how in parts two and three.
+
+I decided to use [shapeless](https://github.com/milessabin/shapeless) because I find the Scala macros api clumsy and it is still considered experimental. The former is really a matter of personal taste, but the latter means as a library maintainer your code can be broken by new versions of Scala. This makes supporting old, current and future versions of Scala difficult! I speak from the first-hand experience of maintaining [slf4s](https://github.com/mattroberts297/slf4s) - where I maintain a branch per Scala release.
+
+Here's what my `build.sbt` file looks like with shapeless and scalatest:
 
 ```scala
 scalaVersion := "2.12.1"
@@ -45,7 +38,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-And here's the first attempt at a parser:
+And here's the first attempt at a parser (I explain how it works below):
 
 ```scala
 trait Parser[A] {
@@ -102,23 +95,23 @@ object Parser {
 }
 ```
 
-And the test:
+And the test that demonstrates automatic type class derivation:
 
 ```scala
 import org.scalatest.{MustMatchers, FlatSpec}
 
-case class SimpleArguments(alpha: String beta: Int, charlie: Boolean)
+case class SimpleArguments(alpha: String, beta: Int, charlie: Boolean)
 
 class ParserSpec extends FlatSpec with MustMatchers {
-  "A Parser" must "parse SimpleArguments" in {
+  "Parser::apply" must "derive a parser for SimpleArguments" in {
     val args = List("a", "1", "true")
-    val parsed = Parser[SimpleArguments].parse(args)
+    val parsed = Parser[SimpleArguments].parse(args) // Magic.
     parsed must be (SimpleArguments("a", 1, true))
   }
 }
 ```
 
-Now in my opinion, the real "magic" is here:
+Now in my opinion, the real "magic" is here (I explain the trick below):
 
 ```scala
 def apply[A](
@@ -151,13 +144,7 @@ For the `SimpleArguments` example the compiler automatically derives the followi
 import org.scalatest.{MustMatchers, FlatSpec}
 
 class ParserSpec extends FlatSpec with MustMatchers {
-  "A Parser" must "parse SimpleArguments" in {
-    val args = List("a", "1", "true")
-    val parsed = Parser[SimpleArguments].parse(args)
-    parsed must be (SimpleArguments("a", 1, true))
-  }
-
-  it must "derive this automatically" in {
+  "Parser::apply" must "let us derive a parser for SimpleArguments" in {
     import Parser._
     import shapeless.Generic
     import shapeless.Lazy
@@ -181,9 +168,13 @@ class ParserSpec extends FlatSpec with MustMatchers {
     parsed must be (SimpleArguments("a", 1, true))
   }
 }
+
 ```
 
-You might be wondering why I use `Lazy` and why I haven't mentioned it. I haven't mentioned it because I think it hinders understanding and readability. It is, however, import to because it stops the compiler giving up it's search when dealing with more complicated derivations.
+You might be wondering why I haven't mentioned `Lazy` or why I use it. First, the easy answer: I haven't mentioned it because I think it hinders understanding and readability. As for why I use it, in short: it stops the compiler giving up it's search for implicits too early. In more detail: the Scala compiler uses heuristics to make sure that it doesn't get stuck in an infinite recursion when resolving implicits. For more complex data types, these heuristics tend to be too aggressive. The use of `Lazy` lets us workaround this issue.
 
-Part 2/3 will look at `LabelledGeneric`.
-Part 3/3 will look at `Default`.
+The code for part one is available on Github at https://github.com/mattroberts297/automatic-type-class-derivation-part-one.
+
+Part two will look at `LabelledGeneric`.
+
+Part three will look at `Default`.
