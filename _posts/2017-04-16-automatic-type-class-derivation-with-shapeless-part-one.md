@@ -9,6 +9,8 @@ tags:
 - shapeless
 ---
 
+This post is part of a series. You might want to read [Part Two](/posts/2017/04/18/automatic-type-class-derivation-with-shapeless-part-two/) and Part Three when you're done here.
+
 I recently found myself needing to parse command line arguments in Scala. I discovered [scopt](https://github.com/scopt/scopt) and [scallop](https://github.com/scallop/scallop), but felt they required quite a lot of boiler plate. What I wanted was a library that would take a case class and automatically derive a parser for me at compile time. Ideally that library would parse \*nix style options e.g. `my-app --foo bar`, fall-back to defaults defined by the case class for missing options and return (not throw) an error when that failed. I made [claper](https://github.com/mattroberts297/claper) to do just this and decided to write about how I did it here.
 
 I started by trying to solve for a simpler problem because I thought solving all of the above with my first try was a little ambitious to start out with. So Instead I tried to convert this:
@@ -38,7 +40,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-And here's the first attempt at a parser (I explain how it works below):
+And here's my first attempt at a parser (I explain how it works below):
 
 ```scala
 trait Parser[A] {
@@ -95,7 +97,7 @@ object Parser {
 }
 ```
 
-And the test that demonstrates automatic type class derivation:
+And a test that demonstrates the automatic type class derivation:
 
 ```scala
 import org.scalatest.{MustMatchers, FlatSpec}
@@ -175,6 +177,6 @@ You might be wondering why I haven't mentioned `Lazy` or why I use it. First, th
 
 The code for part one is [available on Github]( https://github.com/mattroberts297/automatic-type-class-derivation-part-one).
 
-Part two will look at `LabelledGeneric`.
+[Part Two](/posts/2017/04/18/automatic-type-class-derivation-with-shapeless-part-two/)  looks at `LabelledGeneric`.
 
 Part three will look at `Default`.
