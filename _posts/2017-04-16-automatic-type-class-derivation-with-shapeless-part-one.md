@@ -9,7 +9,7 @@ tags:
 - shapeless
 ---
 
-This post is part of a series. You might want to read [Part Two][part-two] and Part Three when you're done here.
+This post is part of a series. You might want to read [Part Two][part-two] and [Part Three][part-three] when you're done here.
 
 I recently found myself needing to parse command line arguments in Scala. I discovered [scopt](https://github.com/scopt/scopt) and [scallop](https://github.com/scallop/scallop), but felt they required quite a lot of boiler plate. What I wanted was a library that would take a case class and automatically derive a parser for me at compile time. Ideally that library would parse \*nix style options e.g. `my-app --foo bar`, fall-back to defaults defined by the case class for missing options and return (not throw) an error when that failed. I made [claper](https://github.com/mattroberts297/claper) to do just this and decided to write about how I did it here.
 
@@ -175,10 +175,10 @@ class ParserSpec extends FlatSpec with MustMatchers {
 
 You might be wondering why I haven't mentioned `Lazy` or why I use it. First, the easy answer: I haven't mentioned it because I think it hinders understanding and readability. As for why I use it, in short: it stops the compiler giving up it's search for implicits too early. In more detail: the Scala compiler uses heuristics to make sure that it doesn't get stuck in an infinite recursion when resolving implicits. For more complex data types, these heuristics tend to be too aggressive. The use of `Lazy` lets us workaround this issue.
 
-The code for part one is [available on Github]( https://github.com/mattroberts297/automatic-type-class-derivation-part-one).
+The code for Part One is [available on Github](https://github.com/mattroberts297/automatic-type-class-derivation-part-one).
 
-[Part Two][part-two]looks at `LabelledGeneric`.
-
-Part three will look at `Default`.
+In [Part Two][part-two] I show how to use `LabelledGeneric` to retrieve case class field names at compile time and in [Part Three][part-three] I show how to use `Default` to, you guessed it, retrieve case class default values at compile time.
 
 [part-two]: https://mattroberts.io/posts/2017/04/18/automatic-type-class-derivation-with-shapeless-part-two/
+
+[part-three]: https://mattroberts.io/posts/2017/04/20/automatic-type-class-derivation-with-shapeless-part-three/
