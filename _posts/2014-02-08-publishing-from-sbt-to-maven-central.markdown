@@ -2,7 +2,7 @@
 layout: post
 title:  "Publishing from SBT to Maven Central"
 date:   2014-02-05 19:30:00
-summary: "Publish an artifact using the sbt-pgp plugin and the Sonatype Nexus Repository Manager."
+description: "Publish an artifact using the sbt-pgp plugin and the Sonatype Nexus Repository Manager."
 tags:
 - scala
 - sbt

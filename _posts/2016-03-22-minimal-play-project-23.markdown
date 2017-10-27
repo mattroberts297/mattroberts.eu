@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Minimal Play 2.3 Project"
+description: "Create a minimal play project without the cruft"
 date:   2016-03-22 08:20:00 +0000
 tags:
 - scala

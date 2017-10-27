@@ -2,7 +2,7 @@
 layout: post
 title:  "IP Tables"
 date:   2013-12-02 19:30:00
-summary: "Use IP tables to route traffic from privileged to non-privileged ports in Linux."
+description: "Use IP tables to route traffic from privileged to non-privileged ports in Linux."
 tags:
 - aws
 - linux

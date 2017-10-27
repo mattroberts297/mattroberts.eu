@@ -2,7 +2,7 @@
 layout: post
 title:  "Composite pattern in Scala"
 date:   2015-04-14 20:00:00
-summary: "Use the type system to create sensible inheritance hierarchies and push side effects to the edge of your application."
+description: "Use the type system to create sensible inheritance hierarchies and push side effects to the edge of your application."
 tags:
 - scala
 - patterns

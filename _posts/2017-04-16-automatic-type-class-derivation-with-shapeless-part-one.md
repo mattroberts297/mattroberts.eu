@@ -2,7 +2,7 @@
 layout: post
 title:  "Automatic type class derivation with shapeless - Part One"
 date:   2017-04-16 10:00:00
-summary: "Use the Scala compiler's implicit resolution rules to automatically derive type class instances"
+description: "Use the Scala compiler's implicit resolution rules to automatically derive type class instances"
 tags:
 - scala
 - patterns

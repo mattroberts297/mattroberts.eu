@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Genetic Programming in Scala"
+description:  "Approximate a function auto-magically using Scala and GP"
 date:   2016-09-09
 tags:
 - scala

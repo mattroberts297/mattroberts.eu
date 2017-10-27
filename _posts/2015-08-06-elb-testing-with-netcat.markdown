@@ -2,7 +2,7 @@
 layout: post
 title:  "ELB Testing with netcat"
 date:   2015-08-06 21:00:00
-summary: Test your ELB TCP health check is working as expected with a netcat server.
+description: Test your ELB TCP health check is working as expected with a netcat server.
 tags:
 - aws
 - linux

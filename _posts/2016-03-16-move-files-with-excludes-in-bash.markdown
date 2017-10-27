@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Move . to foo excluding foo"
+description: "Move the contents of a directory to a subdirectory excluding that subdirectory"
 date:   2016-03-16 18:32:02 +0000
 tags:
 - bash

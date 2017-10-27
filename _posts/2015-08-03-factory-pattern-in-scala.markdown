@@ -2,7 +2,7 @@
 layout: post
 title:  "Factory pattern in Scala"
 date:   2015-08-03 20:30:00
-summary: "Decouple your client code from constructors, unit test actors and materialize type classes."
+description: "Decouple your client code from constructors, unit test actors and materialize type classes."
 tags:
 - scala
 - patterns

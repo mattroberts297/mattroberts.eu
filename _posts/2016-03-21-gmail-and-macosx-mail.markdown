@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Gmail and Mac OS X Mail"
+description: "Make Gmail and Mac OS X Mail play nicely together"
 date:   2016-03-21 08:00:00 +0000
 tags:
 - osx

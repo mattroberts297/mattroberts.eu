@@ -2,7 +2,7 @@
 layout: post
 title:  "AWS EC2 Swap Files"
 date:   2015-01-18 11:30:00
-summary: "Create swap files on t2.micro instances to stop the linux OS killing your JVM process."
+description: "Create swap files on t2.micro instances to stop the linux OS killing your JVM process."
 tags:
 - aws
 - linux

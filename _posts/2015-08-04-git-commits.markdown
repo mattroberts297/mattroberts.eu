@@ -2,7 +2,7 @@
 layout: post
 title:  "Git Commit Messages in Vim"
 date:   2015-08-04 20:30:00
-summary: "Keep your fellow terminal goers onside by hard wrapping your commit messages."
+description: "Keep your fellow terminal goers onside by hard wrapping your commit messages."
 tags:
 - git
 ---

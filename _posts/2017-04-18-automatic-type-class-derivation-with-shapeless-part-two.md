@@ -2,7 +2,7 @@
 layout: post
 title:  "Automatic type class derivation with shapeless - Part Two"
 date:   2017-04-18 19:00:00
-summary: "Use shapeless' LabelledGeneric to retrieve case class field names at compile time"
+description: "Use shapeless' LabelledGeneric to retrieve case class field names at compile time"
 tags:
 - scala
 - patterns

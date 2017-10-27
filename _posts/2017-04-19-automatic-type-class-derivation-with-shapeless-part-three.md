@@ -2,7 +2,7 @@
 layout: post
 title:  "Automatic type class derivation with shapeless - Part Three"
 date:   2017-04-20 07:00:00
-summary: "Use shapeless' Default to retrieve case class defaults at compile time"
+description: "Use shapeless' Default to retrieve case class defaults at compile time"
 tags:
 - scala
 - patterns

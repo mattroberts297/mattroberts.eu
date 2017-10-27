@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Python package management"
+description: "How to use easy_install, pip and virtualenv"
 date:   2016-03-04 18:59:00 +0000
 tags:
 - python

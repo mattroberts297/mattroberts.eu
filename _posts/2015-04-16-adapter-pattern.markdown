@@ -2,7 +2,7 @@
 layout: post
 title:  "Adapter pattern in Scala"
 date:   2015-04-16 20:00:00
-summary: "Use implicit classes to make API interoperability more pleasurable in client code."
+description: "Use implicit classes to make API interoperability more pleasurable in client code."
 tags:
 - scala
 - patterns

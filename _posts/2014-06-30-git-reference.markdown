@@ -2,7 +2,7 @@
 layout: post
 title:  "Git Reference"
 date:   2014-06-30 21:30:00
-summary: "Git reference"
+description: "Git reference"
 tags:
 - git
 ---

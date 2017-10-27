@@ -2,7 +2,7 @@
 layout: post
 title:  "Creational patterns in Scala"
 date:   2015-08-01 20:30:00
-summary: "Use the factory, factory method, builder, prototype and singleton patterns in Scala."
+description: "Use the factory, factory method, builder, prototype and singleton patterns in Scala."
 tags:
 - scala
 - patterns

@@ -2,7 +2,7 @@
 layout: post
 title:  "Git Rebase then Merge"
 date:   2015-08-05 07:00:00
-summary: "Reduce the number of merges in your git log by rebasing local branches (never force push though)."
+description: "Reduce the number of merges in your git log by rebasing local branches (never force push though)."
 tags:
 - git
 ---

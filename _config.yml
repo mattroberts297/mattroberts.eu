@@ -7,17 +7,20 @@
 
 # Site settings
 title: Matt Roberts
-email: mail@mattroberts.eu
+email: mail@mattroberts.io
 description: > # this means to ignore newlines until "baseurl:"
   Posts on scala, python, bash, git, aws and more
 permalink: /posts/:year/:month/:day/:title/
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://mattroberts.eu" # the base hostname & protocol for your site
+url: "https://mattroberts.io" # the base hostname & protocol for your site
 twitter_username: mattroberts297
 github_username:  mattroberts297
 
 # Build settings
 markdown: kramdown
-
 kramdown:
   input: GFM
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

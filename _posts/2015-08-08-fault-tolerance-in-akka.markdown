@@ -2,7 +2,7 @@
 layout: post
 title:  "Fault Tolerance in Akka"
 date:   2015-08-08 12:00:00
-summary: "Supervisor strategies, deciders, guardians and the command failed pattern in Akka."
+description: "Supervisor strategies, deciders, guardians and the command failed pattern in Akka."
 tags:
 - scala
 - akka

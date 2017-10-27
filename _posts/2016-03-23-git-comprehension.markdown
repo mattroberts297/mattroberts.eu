@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Git Comprehension"
+description: "Helpful commands to navigate a large of fast moving repository"
 date:   2016-03-23 08:35:00 +0000
 tags:
 - git

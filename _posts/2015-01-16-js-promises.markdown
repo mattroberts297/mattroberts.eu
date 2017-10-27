@@ -2,7 +2,7 @@
 layout: post
 title:  "JS Promises"
 date:   2015-01-16 22:30:00
-summary: "Carrying state around in JS when you do not know about bind (or cannot use it)."
+description: "Carrying state around in JS when you do not know about bind (or cannot use it)."
 tags:
 - js
 ---

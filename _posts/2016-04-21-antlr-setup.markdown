@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "ANTLR 4 Setup"
+description:  "How to install ANTLR 4 - a tool to generate parsers from grammars"
 date:   2016-04-21 08:35:00 +0000
 tags:
 - antlr
@@ -32,4 +33,3 @@ java -cp "/opt/local/lib/antlr4/antlr-4.5.3-complete.jar:$CLASSPATH" org.antlr.v
 EOL
 chmod a+x /opt/local/bin/grun
 ```
-

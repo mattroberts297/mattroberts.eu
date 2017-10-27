@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Python version management"
+description: "How to use pyenv instead of virtualenv"
 date:   2016-03-21 18:32:00 +0000
 tags:
 - python
